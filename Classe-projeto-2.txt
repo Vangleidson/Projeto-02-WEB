@@ -1,0 +1,6 @@
+Classe: Produto
+
++ idProduto: integer primary
++ nomeProduto: varchar
++ quantidade: int
++ price: real
