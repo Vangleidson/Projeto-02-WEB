@@ -1,8 +1,8 @@
 {
   "name": "project02",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Aplicação CRUD",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon",
     "lint": "eslint --ext .js,.html -f ./node_modules/eslint-friendly-formatter . --fix",
@@ -13,8 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/Vangleidson/Projeto-02-WEB.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "postgresql",
+    "crud",
+    "node-postgres"
+  ],
+  "author": "Van Lopes",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Vangleidson/Projeto-02-WEB/issues"
