@@ -1,9 +1,4 @@
-/**
- * File: server.js
- * Description: arquivo responsável por toda a configuração e execução da aplicação.
- * Data: 20/07/2021
- * Author: Van
- */
+// Description: arquivo responsável por toda a configuração e execução da aplicação.
 
 const app = require('./src/app');
 

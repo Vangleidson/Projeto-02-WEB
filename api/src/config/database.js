@@ -1,9 +1,4 @@
-/**
- * File:
- * Description: responsável pelas 'connectionStrings' da aplicação: PostgreSQL'.
- * Data: 20/07/2021
- * Author: Van Lopes
- */
+// Descrição: responsável pelas 'connectionStrings' da aplicação: PostgreSQL'.
 
 const { Pool } = require('pg');
 const dotenv = require('dotenv');

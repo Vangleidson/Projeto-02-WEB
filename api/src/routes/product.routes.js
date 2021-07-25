@@ -1,9 +1,4 @@
-/**
- * File:
- * Description: responsável pelas rotas da api relacionado a classe 'Produto'.
- * Data: 20/07/2021
- * Author: Van Lopes
- */
+// Descrição: responsável pelas rotas da api relacionado a classe 'Produto'.
 
 const router = require('express-promise-router')();
 const productController = require('../controllers/product.controller');

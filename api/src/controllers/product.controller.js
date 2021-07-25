@@ -1,9 +1,4 @@
-/**
- * File:
- * Description: responsável pela lógica do CRUD da API 'Produto'.
- * Data: 20/07/2021
- * Author: Van Lopes
- */
+// Descrição: responsável pela lógica do CRUD da API 'Produto'.
 
 const db = require('../config/database');
 

@@ -1,9 +1,4 @@
-/**
- * File: app.js
- * Description: responsável por fazer a comunicação entre servidor e aplicação.
- * Data: 20/07/2021
- * Author: Van Lopes
- */
+// Descrição: responsável por fazer a comunicação entre servidor e aplicação.
 
 const express = require('express');
 const cors = require('cors');

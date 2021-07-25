@@ -1,9 +1,4 @@
-/**
- * File:
- * Description: responsável pela chamada das apis da aplicação.
- * Data: 20/07/2021
- * Author: Van Lopes
- */
+// Descrição: responsável pela chamada das APIs da aplicação.
 
 const express = require('express');
 
