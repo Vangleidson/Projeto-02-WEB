@@ -23,3 +23,10 @@ exports.listAllProducts = async(req, res) => {
   const response = await db.query('SELECT * FROM products');
   res.status(200).send(response.rows);
 };
+
+// Método responsável por selecionar um 'Produto' pelo seu 'ID'
+exports.findProductById = async(req, res) => {
+  const productId = parseInt(req.params.id);
+  const response = await db.query('SELECT * FROM products WHERE productId = $1', [productId]); // $1 - indica que estamos buscando na primeira coluna(productId) da tabela 'Products'.
+  res.status(200).send(response.rows);
+}
