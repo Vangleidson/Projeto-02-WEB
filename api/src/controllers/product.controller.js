@@ -4,7 +4,7 @@ const { parse } = require('dotenv');
 const db = require('../config/database');
 
 // Função responsável por criar um novo Produto:
-exports.createProduct = async (req, res) => {
+exports.criarProduto = async (req, res) => {
   const { product_name, quantity, price } = req.body;
   const { rows } = await db.query(
     'INSERT INTO products (product_name, quantity, price) VALUES ($1, $2, $3)',
@@ -20,20 +20,20 @@ exports.createProduct = async (req, res) => {
 };
 
 // Função responsável por LISTAR TODOS os Produtos:
-exports.listAllProducts = async(req, res) => {
+exports.listarTdsProdutos = async(req, res) => {
   const response = await db.query('SELECT * FROM products');
   res.status(200).send(response.rows);
 };
 
 // Função responsável por LISTAR um Produto pelo seu Id:
-exports.findProductById = async(req, res) => {
+exports.listarProdutoId = async(req, res) => {
   const productId = parseInt(req.params.id);
   const response = await db.query('SELECT * FROM products WHERE productId = $1', [productId]); // $1 - indica que estamos buscando na primeira coluna(productId) da tabela 'Products'.
   res.status(200).send(response.rows);
 };
 
 // Função responsável por ATUALIZAR/EDITAR um Produto pelo seu Id:
-exports.updateProductById = async(req, res) => {
+exports.atualizarProduto = async(req, res) => {
   const productId = parseInt(req.params.id);
   const { product_name, quantity, price } = req.body;
 
@@ -42,7 +42,7 @@ exports.updateProductById = async(req, res) => {
 };
 
 // Função responsável por DELETAR um Produto pelo seu ID:
-exports.deleteProductById = async (req, res) => {
+exports.excluirProduto = async (req, res) => {
   const productId = parseInt(req.params.id);
   await db.query('DELETE FROM products WHERE productId = $1', [productId]);
 

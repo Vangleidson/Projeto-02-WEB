@@ -1,23 +1,23 @@
 // Descrição: responsável pelas rotas da api relacionado a classe 'Produto'.
 
-const router = require('express-promise-router')();
-const productController = require('../controllers/product.controller');
+const rota = require('express-promise-router')();
+const controladorProduto = require('../controllers/product.controller');
 
 // Definindo as rotas do CRUD - Produto:
 
 // Rota responsável por CRIAR um novo Produto = (POST):
-router.post('/products', productController.createProduct);
+rota.post('/products', controladorProduto.criarProduto);
 
 // Rota para LISTAR TODOS os Produtos = (GET):
-router.get('/products', productController.listAllProducts)
+rota.get('/products', controladorProduto.listarTdsProdutos)
 
 // Rota para LISTAR um Produto pelo seu Id = (GET):
-router.get('/products/:id', productController.findProductById);
+rota.get('/products/:id', controladorProduto.listarProdutoId);
 
 // Rota para ATUALIZAR/EDITAR um Produto pelo seu Id = (PUT)
-router.put('/products/:id', productController.updateProductById);
+rota.put('/products/:id', controladorProduto.atualizarProduto);
 
 // Rotapara DELETAR um Produto pelo seu Id = (DELETE):
-router.delete('/products/:id', productController.deleteProductById);
+rota.delete('/products/:id', controladorProduto.excluirProduto);
 
-module.exports = router;
+module.exports = rota;
