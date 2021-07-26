@@ -3,7 +3,7 @@
 const { parse } = require('dotenv');
 const db = require('../config/database');
 
-// ==> Método responsável por criar um novo 'Product':
+// Função responsável por criar um novo Produto:
 exports.createProduct = async (req, res) => {
   const { product_name, quantity, price } = req.body;
   const { rows } = await db.query(
@@ -12,27 +12,27 @@ exports.createProduct = async (req, res) => {
   );
 
   res.status(201).send({
-    message: 'Product added successfully!',
+    message: 'Produto criado com sucesso!',
     body: {
       product: { product_name, quantity, price },
     },
   });
 };
 
-// Método responsável por selecionar todos os 'Products'
+// Função responsável por LISTAR TODOS os Produtos:
 exports.listAllProducts = async(req, res) => {
   const response = await db.query('SELECT * FROM products');
   res.status(200).send(response.rows);
 };
 
-// Método responsável por selecionar um 'Produto' pelo seu 'ID'
+// Função responsável por LISTAR um Produto pelo seu Id:
 exports.findProductById = async(req, res) => {
   const productId = parseInt(req.params.id);
   const response = await db.query('SELECT * FROM products WHERE productId = $1', [productId]); // $1 - indica que estamos buscando na primeira coluna(productId) da tabela 'Products'.
   res.status(200).send(response.rows);
 };
 
-// Método responsável por atualizar/editar um 'Produto' pelo seu 'ID'
+// Função responsável por ATUALIZAR/EDITAR um Produto pelo seu Id:
 exports.updateProductById = async(req, res) => {
   const productId = parseInt(req.params.id);
   const { product_name, quantity, price } = req.body;
@@ -41,7 +41,7 @@ exports.updateProductById = async(req, res) => {
   res.status(200).send({ message: 'Produto atualizado com sucesso!' });
 };
 
-// Método responsável por deletar um 'Produto' pelo seu 'ID'
+// Função responsável por DELETAR um Produto pelo seu ID:
 exports.deleteProductById = async (req, res) => {
   const productId = parseInt(req.params.id);
   await db.query('DELETE FROM products WHERE productId = $1', [productId]);

@@ -3,21 +3,21 @@
 const router = require('express-promise-router')();
 const productController = require('../controllers/product.controller');
 
-// Definindo as rotas do CRUD - 'Produto':
+// Definindo as rotas do CRUD - Produto:
 
-// Rota responsável por criar um novo 'Produto': (POST): localhost:3000/api/products
+// Rota responsável por CRIAR um novo Produto = (POST):
 router.post('/products', productController.createProduct);
 
-// Rota para selecionar todos os 'Produto': (GET): localhost:3000/api/products
+// Rota para LISTAR TODOS os Produtos = (GET):
 router.get('/products', productController.listAllProducts)
 
-// Rota para selecionar um 'Produto' pelo seu 'ID': (GET): localhost:3000/api/products/:id
+// Rota para LISTAR um Produto pelo seu Id = (GET):
 router.get('/products/:id', productController.findProductById);
 
-// Rota para atualizar/editar um 'Produto' pelo seu 'ID': (GET): localhost:3000/api/products/:id
+// Rota para ATUALIZAR/EDITAR um Produto pelo seu Id = (PUT)
 router.put('/products/:id', productController.updateProductById);
 
-// Rotapara deletar um 'Produto' pelo seu 'ID': (GET): localhost:3000/api/products/:id
+// Rotapara DELETAR um Produto pelo seu Id = (DELETE):
 router.delete('/products/:id', productController.deleteProductById);
 
 module.exports = router;
