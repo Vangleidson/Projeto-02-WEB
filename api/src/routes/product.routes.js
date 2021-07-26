@@ -14,10 +14,10 @@ router.get('/products', productController.listAllProducts)
 // Rota para selecionar um 'Produto' pelo seu 'ID': (GET): localhost:3000/api/products/:id
 router.get('/products/:id', productController.findProductById);
 
-// // Rota para atualizar/editar um 'Produto' pelo seu 'ID': (GET): localhost:3000/api/products/:id
-// router.update('/products/:id', productController.updateProductById);
+// Rota para atualizar/editar um 'Produto' pelo seu 'ID': (GET): localhost:3000/api/products/:id
+router.put('/products/:id', productController.updateProductById);
 
-// // Rotapara deletar um 'Produto' pelo seu 'ID': (GET): localhost:3000/api/products/:id
-// router.delete('/products/:id', productController.deleteProductById);
+// Rotapara deletar um 'Produto' pelo seu 'ID': (GET): localhost:3000/api/products/:id
+router.delete('/products/:id', productController.deleteProductById);
 
 module.exports = router;
