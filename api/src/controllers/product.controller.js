@@ -42,6 +42,9 @@ exports.updateProductById = async(req, res) => {
 };
 
 // Método responsável por deletar um 'Produto' pelo seu 'ID'
-exports.deleteProductById = async(req, res) => {
+exports.deleteProductById = async (req, res) => {
+  const productId = parseInt(req.params.id);
+  await db.query('DELETE FROM products WHERE productId = $1', [productId]);
 
+  res.status(200).send({ message: 'Produto excluído com sucesso!', productId });
 };
